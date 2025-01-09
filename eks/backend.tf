@@ -1,5 +1,5 @@
 terraform {
-  required_version = "~> 1.9.3"
+  required_version = "~> 1.10.0"
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -7,10 +7,10 @@ terraform {
     }
   }
   backend "s3" {
-    bucket         = "dev-aman-tf-bucket"
-    region         = "us-east-1"
+    bucket         = "devops-jenkins-1"
+    region         = "us-east-2"
     key            = "eks/terraform.tfstate"
-    dynamodb_table = "Lock-Files"
+    dynamodb_table = "devops-terraform-logs"
     encrypt        = true
   }
 }
